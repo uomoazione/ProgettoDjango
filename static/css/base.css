@@ -1,0 +1,87 @@
+body{
+	background-color: antiquewhite;
+}
+
+h1,h2,h3,h4,h5,h6{
+	color: black;
+}
+
+.box-element{
+	box-shadow: lightgray  0 0 1rem;
+	background-color: #fff;
+	border-radius: 0.5rem;
+	padding: 1%;
+}
+
+.thumbnail{
+	width: 100%;
+    box-shadow: 0.1rem 0.1rem 1.5rem 1rem white;
+}
+
+.product{
+	border-radius: 0 0 4px 4px;
+}
+
+#cart-icon{
+	width: 2.5rem;
+	display: inline-block;
+	margin-left: 1rem;
+	height: 2.5rem;
+}
+
+#cart-total{
+	text-align: center;
+	font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+	display: inline;
+	color: red;
+	font-size: 1rem;
+}
+
+.col-lg-4, .col-lg-6, .col-lg-8, .col-lg-12{
+	margin-top: 0.8rem;
+}
+
+.btn{
+	border-radius: 0;
+}
+
+.row-image{
+	width: 6rem;
+}
+.shipping{
+	text-align: center;
+}
+.form-field{
+	width:15rem;
+	display: inline-block;
+	padding: 0.3px;
+}
+
+.cart-row{
+	display: flex;
+    align-items: normal;
+    padding-bottom: 0.6rem;
+    margin-bottom: 0.6rem;
+    border-bottom: 1px solid #646464;
+
+}
+
+.quantity{
+	display: inline-flex;
+	font-weight: 700;
+	padding-right: 0.6rem;
+
+
+}
+
+.chg-quantity{
+	width: 0.8rem;
+	cursor: pointer;
+	display: block;
+	margin-top: 5px;
+	transition:.1s;
+}
+
+.chg-quantity:hover{
+	opacity: .6;
+}

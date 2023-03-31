@@ -1,0 +1,35 @@
+{% extends 'store/base.html' %}
+{% load static %}
+{% block content %}
+    <article>
+        <h1>Benvenuto sullo store principale</h1>
+            <div class="row">
+                <div class="col-lg-4">
+                    <img class="thumbnail" src="{% static "immagini/taglio1.jpg" %}" >
+                    <div class="box-element product">
+                        <h6> <strong>Taglio A</strong> </h6>
+                        <hr>
+                    <button class="btn btn-outline-success add btn"> Aggiungi al carrello
+                    </button>
+                         <a class="btn btn-dark" href="#"> View </a>
+                        <h4 style="display: inline-block; float: right">20$</h4>
+                     </div>
+                </div>
+                <!--<div class="col-lg-4">
+                    <img class="thumbnail"src="{% static "immagini/taglio2.jpg" %}">
+                    <div class="box-element product">
+                    <h6> <strong>Taglio B</strong> </h6>
+                    <hr>
+                    </div>
+                </div> -->
+                <div class="col-lg-4">
+                    <img class="thumbnail" src="{% static "immagini/taglio3.jpg" %}" >
+                    <div class="box-element product">
+                    <h6> <strong>Taglio C</strong> </h6>
+                    <hr>
+                    <button class="btn btn-outline-success add btn"> Aggiungi al carrello </button>
+                    </div>
+                </div>
+            </div>
+    </article>
+{%endblock %}
