@@ -1,9 +1,10 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-
+#admin username: manuel -- email: manuelcampi20@gmail.com
+#password: abc123
 # Create your models here.
-
+#min 17:30
 class Customer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True,
                                 # Cascade elimina tutto il customer, attributi compresi
