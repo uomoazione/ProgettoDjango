@@ -5,7 +5,6 @@ from django.contrib.auth.models import User
 # admin username: manuel -- email: manuelcampi20@gmail.com
 # password: abc123
 # Create your models here.
-# min 17:30
 class Customer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True,
                                 blank=True)  # lega lo User col customer 1-1
@@ -68,7 +67,7 @@ class OrderItem(models.Model):  # oggetto dentro carrello
 
     @property
     def get_total(self):
-        total = self.product.price = self.quantity
+        total = self.product.price * self.quantity
         return total
 
 

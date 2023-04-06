@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 body{
-	background-color: antiquewhite;
+	background-color: #CDD42A;
+	font-family: 'Open Sans', sans-serif;
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -15,7 +17,7 @@ h1,h2,h3,h4,h5,h6{
 
 .thumbnail{
 	width: 100%;
-    box-shadow: 0.1rem 0.1rem 1.5rem 1rem white;
+    box-shadow: 0.1rem 0.1rem 1rem 0.1rem whitesmoke;
 }
 
 .product{
@@ -33,7 +35,7 @@ h1,h2,h3,h4,h5,h6{
 	text-align: center;
 	font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
 	display: inline;
-	color: red;
+	color: #00B0DB;
 	font-size: 1rem;
 }
 
@@ -85,3 +87,7 @@ h1,h2,h3,h4,h5,h6{
 .chg-quantity:hover{
 	opacity: .6;
 }
+
+.navbar{background-color:  #010202}
+.nav-content, .navbar-text, .nav-link
+{color: whitesmoke}

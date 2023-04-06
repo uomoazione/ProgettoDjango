@@ -19,15 +19,15 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark "> <!--questo colore  non mi permette di personalizzare la navbar-->
-  <a class="navbar-brand" href="{% url 'store' %}"><img src="{% static 'immagini/logo.jpg' %}" width=auto height="100"></a>
+    <nav class="navbar navbar-expand-lg "> <!--inizio navbar -->
+  <a class="navbar-brand" href="{% url 'store' %}"><img src="{% static 'immagini/logo.png' %}" width=auto height="100"></a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 	    <span class="navbar-toggler-icon"></span>
 	  </button> <!--controllare-->
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
             <a class="nav-link" href="{% url 'store' %}">Store <span class="sr-only">
             </span>
@@ -35,11 +35,11 @@
           </li>
         </ul>
           <div class="form-inline my-2 my-lg-0"><!-- form allineato con margine 2 no margine verticale (0)-->
-              <a href="#"class="btn btn-warning">Accedi</a><!--E-->
+              <a href="#"class="btn btn-warning">Accedi</a>
               <a href="{% url 'cart' %}">
                  <img id= "cart-icon" src="{% static 'immagini/cart.png' %}" ></a>
               </a>
-              <p id="cart-total">0</p> <!--mettere link cart Items-->
+              <p id="cart-total">{{ order.get_cart_items }}</p> <!--mettere link cart Items-->
           </div>
       </div>
     </nav> <!-- bootstrap navbar-->
