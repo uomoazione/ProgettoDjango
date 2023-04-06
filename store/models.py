@@ -1,40 +1,63 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-#admin username: manuel -- email: manuelcampi20@gmail.com
-#password: abc123
+
+# admin username: manuel -- email: manuelcampi20@gmail.com
+# password: abc123
 # Create your models here.
-#min 17:30
+# min 17:30
 class Customer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True,
-                                # Cascade elimina tutto il customer, attributi compresi
                                 blank=True)  # lega lo User col customer 1-1
+    # Cascade elimina tutto il customer, attributi compresi
     name = models.CharField(max_length=200, null=True)
-    email = models.CharField(max_length=200, null=True)
+    email = models.CharField(max_length=200,default="default@email.com")
 
     def __str__(self):
         return self.name  # valore di ritorno quando Customer chiamato
 
 
+################
+
 class Product(models.Model):
     name = models.CharField(max_length=200)
     price = models.FloatField()
-    digital = models.BooleanField(default=False, null=True, blank=True)
-
-    # digital è bool, così sappiamo se è fisico o meno il prodotto
+    digital = models.BooleanField(default=False, null=True,
+                                  blank=True)  # digital è bool, così sappiamo se è fisico o meno il prodotto
+    image = models.ImageField(null=True, blank=True)
 
     def __str__(self):
         return self.name
+
+    @property
+    def imageURL(self):
+        try:
+            url = self.image.url
+        except:
+            url = ''
+        return url
 
 
 class Order(models.Model):  # il nostro carrello
     customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True, blank=True)  # oneToMany
     date_ordered = models.DateTimeField(auto_now_add=True)
-    complete = models.BooleanField(default=False, null=True, blank=True)
+    complete = models.BooleanField(default=False)
     transaction_id = models.CharField(max_length=200, null=True)
 
     def __str__(self):
         return str(self.id)  # return PK di Order
+
+    @property
+    def get_cart_total(self):
+        orderitems = self.orderitem_set.all()
+        total = sum([item.get_total for item in orderitems])
+        return total
+
+    @property
+    def get_cart_items(self):
+        orderitems = self.orderitem_set.all()
+        total = sum([item.quantity for item in orderitems])
+        return total
 
 
 class OrderItem(models.Model):  # oggetto dentro carrello
@@ -43,8 +66,10 @@ class OrderItem(models.Model):  # oggetto dentro carrello
     quantity = models.IntegerField(default=0, null=True, blank=True)
     date_added = models.DateTimeField(auto_now_add=True)
 
-    def __str__(self):
-        return self.product.name
+    @property
+    def get_total(self):
+        total = self.product.price = self.quantity
+        return total
 
 
 class ShippingAddress(models.Model):

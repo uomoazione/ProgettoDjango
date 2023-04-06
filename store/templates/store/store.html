@@ -4,32 +4,20 @@
     <article>
         <h1>Benvenuto sullo store principale</h1>
             <div class="row">
+                {%  for product in products  %}
                 <div class="col-lg-4">
-                    <img class="thumbnail" src="{% static "immagini/taglio1.jpg" %}" >
+                    <img class="thumbnail" src="{{ product.imageURL}}" >
                     <div class="box-element product">
-                        <h6> <strong>Taglio A</strong> </h6>
+                        <h6> <strong>{{ product.name }}</strong> </h6>
                         <hr>
                     <button class="btn btn-outline-success add btn"> Aggiungi al carrello
                     </button>
                          <a class="btn btn-dark" href="#"> View </a>
-                        <h4 style="display: inline-block; float: right">20$</h4>
+                        <h4 style="display: inline-block; float: right">
+                            ${{ product.price | floatformat:2 }}</h4>
                      </div>
                 </div>
-                <!--<div class="col-lg-4">
-                    <img class="thumbnail"src="{% static "immagini/taglio2.jpg" %}">
-                    <div class="box-element product">
-                    <h6> <strong>Taglio B</strong> </h6>
-                    <hr>
-                    </div>
-                </div> -->
-                <div class="col-lg-4">
-                    <img class="thumbnail" src="{% static "immagini/taglio3.jpg" %}" >
-                    <div class="box-element product">
-                    <h6> <strong>Taglio C</strong> </h6>
-                    <hr>
-                    <button class="btn btn-outline-success add btn"> Aggiungi al carrello </button>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
     </article>
 {%endblock %}
