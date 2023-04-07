@@ -1,9 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap'); /*il font free più simile a fairtrade che ho trovato*/
 body{
 	background-color: #CDD42A;
 	font-family: 'Open Sans', sans-serif;
 }
-
+#accedi
+{
+	margin-right: 2rem;
+}
 h1,h2,h3,h4,h5,h6{
 	color: black;
 }
