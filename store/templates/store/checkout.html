@@ -4,6 +4,8 @@
      <div class="row">
 		<div class="col-lg-6">
 			<div class="box-element" id="form-wrapper">
+                <a  class="btn btn-dark" href="{% url 'cart' %}">&#x2190; Torna al carrello</a>
+				<hr>
 				<form id="form">
 					<div id="user-info">
 						<div class="form-field">
@@ -58,8 +60,7 @@
 
 		<div class="col-lg-6">
 			<div class="box-element">
-				<a  class="btn btn-outline-dark" href="{% url 'cart' %}">&#x2190; Torna al carrello</a>
-				<hr>
+
 				<h3>Riepilogo ordine</h3>
 				<hr>
                 {% for item in items %}

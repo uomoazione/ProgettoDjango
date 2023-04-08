@@ -11,15 +11,17 @@
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="  crossorigin="anonymous"></script>
     <link rel="stylesheet"  type="text/css" href="{% static 'css/base.css' %}">
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible">
 </head>
-
+<!--TO DO   La navbar quando compressa mette le icone a sinistra anzichè sotto l'icona del bottone, inoltre il carrello non visualizza gli articoli selezionati nella template store-->
 <body>
-    <nav class="navbar navbar-expand-lg "> <!--inizio navbar -->
+    <nav class="navbar navbar-expand-lg " > <!--inizio navbar -->
         <a class="nav-logo" href="{% url 'store' %}"><img src="{% static 'immagini/logo.png' %}" width=auto height="100" alt="immagine prodotto"> </a>
         <button class="navbar-toggler bg-dark-subtle" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -43,10 +45,25 @@
         </div>
     </nav> <!-- bootstrap navbar-->
 
+
     <div class="container"><!--container di bootstrap-->
         {% block content %}{% endblock %}
     </div>
 
-<!--Lista di script che da mettere-->
+<!--Lista di script-->
+
+<script>
+    let navbarCollapse= function ()
+    {
+        if($('#navbarSupportedContent').is(":hidden")){
+            $("#navbarSupportedContent").show();
+        }
+        else {
+            $("#navbarSupportedContent").hide();}
+    };
+    $(document).ready(function() { <!--misura di sicurezza-->
+    $(".navbar-toggler").on("click", navbarCollapse);
+    });
+</script>
 </body>
 </html>

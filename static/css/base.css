@@ -1,12 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap'); /*il font free più simile a fairtrade che ho trovato*/
+
+
 body{
 	background-color: #CDD42A;
 	font-family: 'Open Sans', sans-serif;
 }
+
 #accedi
 {
 	margin-right: 2rem;
 }
+
 h1,h2,h3,h4,h5,h6{
 	color: black;
 }
@@ -22,11 +26,6 @@ h1,h2,h3,h4,h5,h6{
 	width: 100%;
     box-shadow: 0.1rem 0.1rem 1rem 0.1rem whitesmoke;
 }
-
-.product{
-	border-radius: 0 0 4px 4px;
-}
-
 #cart-icon{
 	width: 2.5rem;
 	display: inline-block;
@@ -59,24 +58,20 @@ h1,h2,h3,h4,h5,h6{
 .form-field{
 	width:15rem;
 	display: inline-block;
-	padding: 0.3px;
+	padding: 0.3rem;
 }
-
 .cart-row{
 	display: flex;
     align-items: normal;
     padding-bottom: 0.6rem;
     margin-bottom: 0.6rem;
     border-bottom: 1px solid #646464;
-
 }
 
 .quantity{
 	display: inline-flex;
 	font-weight: 700;
 	padding-right: 0.6rem;
-
-
 }
 
 .chg-quantity{
@@ -94,3 +89,20 @@ h1,h2,h3,h4,h5,h6{
 .navbar{background-color:  #010202}
 .nav-content, .navbar-text, .nav-link
 {color: whitesmoke}
+
+@media only screen and (max-width: 600px )
+{
+	body
+	{
+		font-family: Calibri;
+		padding: 0;
+		margin: 0;
+		flex-direction: column;
+		align-content: center;
+		font-size: 0.6rem;
+		grid-column: auto;
+	}
+	.quantity{
+		display: block;
+	}
+} /*il coronamento di questo mio anno qui all'ITS fitstic*/

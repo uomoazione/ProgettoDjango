@@ -6,12 +6,12 @@
                 {%  for product in products  %}
                 <div class="col-lg-4">
                     <img class="thumbnail" src="{{ product.imageURL}}" >
-                    <div class="box-element product">
+                    <div class="box-element">
                         <h6> <strong>{{ product.name }}</strong> </h6>
                         <hr>
                     <button class="btn btn-outline-success add btn"> Aggiungi al carrello
                     </button>
-                         <a class="btn btn-dark" href="#"> View </a>
+                         <a class="btn btn-dark" href="#"> Dettagli </a>
                         <h4 style="display: inline-block; float: right">
                             €{{ product.price | floatformat:2 }}</h4>
                      </div>

@@ -14,7 +14,7 @@
 						<th><h5>Prodotti: <strong>{{order.get_cart_items}}</strong></h5></th>
 						<th><h5>Totale:<strong> €{{order.get_cart_total|floatformat:2}}</strong></h5></th>
 						<th>
-							<a  style="float:right; margin:5px;" class="btn btn-outline-primary" href="{% url 'checkout' %}">Vai al checkout</a>
+							<a  style="float:right; margin:5px;" class="btn btn-info" href="{% url 'checkout' %}">Vai al checkout&#x2192;</a>
 						</th>
 					</tr>
 				</table>
