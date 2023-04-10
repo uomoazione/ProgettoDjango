@@ -86,10 +86,14 @@ h1,h2,h3,h4,h5,h6{
 	opacity: .6;
 }
 
-.navbar{background-color:  #010202}
-.nav-content, .navbar-text, .nav-link
-{color: whitesmoke}
+.navbar{
+	background-color:  #010202
+}
 
+.nav-content, .navbar-text, .nav-link, .nav-link:active, .nav-link:hover
+{
+	color: whitesmoke; /*giuro che prima l'hover andava*/
+}
 @media only screen and (max-width: 600px )
 {
 	body
@@ -105,4 +109,10 @@ h1,h2,h3,h4,h5,h6{
 	.quantity{
 		display: block;
 	}
-} /*il coronamento di questo mio anno qui all'ITS fitstic*/
+
+.box-login{
+	background-color: #fff;
+	border-radius: 0.5rem;
+	padding: 5%;
+	margin-top: 10%;
+}

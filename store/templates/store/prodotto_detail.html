@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Prodotto numero {{ object.id }}: {{object.name}}</h1>
+
+<p>
+    <a href="{% url 'store' %}">
+        Torna allo store
+    </a>
+</p>
+
+<p>{{ object.nome }}</p>
+
+<hr>
+
+<ul>
+    {% for el in object.product.all %}
+        <li>{{ el.nome }}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

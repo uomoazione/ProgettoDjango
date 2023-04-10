@@ -11,7 +11,7 @@
                         <hr>
                     <button class="btn btn-outline-success add btn"> Aggiungi al carrello
                     </button>
-                         <a class="btn btn-dark" href="#"> Dettagli </a>
+                         <a class="btn btn-dark" href="{% url 'dettaglio_prodotto' product.pk %}"> Dettagli </a>
                         <h4 style="display: inline-block; float: right">
                             €{{ product.price | floatformat:2 }}</h4>
                      </div>

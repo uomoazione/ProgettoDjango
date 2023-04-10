@@ -1,8 +1,20 @@
 from django.shortcuts import render
 from .models import *
+from django.views.generic import (CreateView,
+                                  DeleteView,
+                                  DetailView,
+                                  ListView,
+                                  UpdateView,
+                                  )
 
 
 # Create your views here.
+
+class ProdottoDetailView(DetailView):
+    model = Product
+    context_object_name = "product"
+    template_name = "store/prodotto_detail.html"
+
 
 def store(request):
     products = Product.objects.all()
@@ -18,7 +30,7 @@ def cart(request):
         items = order.orderitem_set.all()
     else:
         items = []
-        order= {'get_cart_total':0, 'get_cart_items':0}
+        order = {'get_cart_total': 0, 'get_cart_items': 0}
     context = {'items': items, 'order': order}  # Aggiungi gli oggetti items al contesto
     return render(request, "store/cart.html", context)
 

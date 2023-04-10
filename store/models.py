@@ -25,6 +25,7 @@ class Product(models.Model):
                                   blank=True)  # digital è bool, così sappiamo se è fisico o meno il prodotto
     image = models.ImageField(null=True, blank=True)
 
+
     def __str__(self):
         return self.name
 
