@@ -16,9 +16,19 @@ class ProdottoDetailView(DetailView):
     template_name = "store/prodotto_detail.html"
 
 
+class ProdottoCreateView(CreateView):
+    model = Product
+    context_object_name = "product"
+    template_name = "store/prodotto_create.html"
+
+
 def store(request):
+    try:
+        order = Order.objects.get()
+    except Order.DoesNotExist:
+        order = None
     products = Product.objects.all()
-    context = {'products': products}
+    context = {'products': products, 'order':order}
     return render(request, 'store/store.html', context)
 
 
@@ -39,7 +49,7 @@ def checkout(request):
     if request.user.is_authenticated:
         customer = request.user.customer
         order, created = Order.objects.get_or_create(customer=customer,
-                                                     complete=False)  # creiamo un oggetto o lo mettiamo in query se esiste già
+                                                     complete=False)
         items = order.orderitem_set.all()
     else:
         items = []

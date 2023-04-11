@@ -10,7 +10,7 @@ class Customer(models.Model):
                                 blank=True)  # lega lo User col customer 1-1
     # Cascade elimina tutto il customer, attributi compresi
     name = models.CharField(max_length=200, null=True)
-    email = models.CharField(max_length=200,default="default@email.com")
+    email = models.CharField(max_length=200, default="default@email.com")
 
     def __str__(self):
         return self.name  # valore di ritorno quando Customer chiamato
@@ -19,12 +19,12 @@ class Customer(models.Model):
 ################
 
 class Product(models.Model):
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=42)
     price = models.FloatField()
     digital = models.BooleanField(default=False, null=True,
                                   blank=True)  # digital è bool, così sappiamo se è fisico o meno il prodotto
     image = models.ImageField(null=True, blank=True)
-
+    descrizione = models.CharField(max_length=500, blank=True, null=True)
 
     def __str__(self):
         return self.name

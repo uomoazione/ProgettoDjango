@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "store/base.html" %}
 
 
 {% block content %}
@@ -12,7 +12,7 @@
             <br>
         <input type="password" required>
             <label>Password</label>
-           <p>Non sei registrato? <a href="login.html">Registrati</a> </p>
+           <p>Non sei registrato? <a href="/admin/">Registrati</a> </p>
     {% csrf_token %}
 
         <input type="submit" value="Login">
